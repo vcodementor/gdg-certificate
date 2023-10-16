@@ -8,7 +8,7 @@
 
 <body>
 <button id="button">DOWNLOAD</button>
-<div id="p1" style="overflow: hidden; position: relative; background-color: white;">
+<div id="p1" style="overflow: hidden; position: relative; background-color: white; width: 1210px; height: 935px;">
 
 <!-- Begin shared CSS values -->
 <style class="shared-css" type="text/css" >
@@ -166,7 +166,7 @@ const btn = document.getElementById("button");
 
 btn.addEventListener("click", function(){
 var element = document.getElementById('p1');
-  html2pdf().from(element).save('filename.pdf');
+  html2pdf().from(element).save('certificate.pdf');
 });
 </script>
 </body>
