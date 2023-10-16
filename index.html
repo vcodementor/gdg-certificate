@@ -40,8 +40,8 @@
 			overflow: hidden; 
 			position: relative; 
 			background-color: white; 
-			width: 75.625rem; /* 1210px / 16px */
-    		height: 58.4375rem; /* 935px / 16px */
+			width: 1210px;
+    		height: 935px ;
 		}
 		.print-content-overlay-container{
 			width:100%; 
@@ -52,8 +52,8 @@
 			-webkit-user-select: none;
 		}
 		.print-content-svg-container{
-		    width: 75.625rem; /* 1210px / 16px */
-    		height: 58.4375rem; /* 935px / 16px */
+			width: 1210px;
+    		height: 935px ;
 			-moz-transform:scale(1); 
 			z-index: 0; 
 			isolation: isolate;
@@ -259,7 +259,7 @@
 		<div id="pg1Overlay" class="print-content-overlay-container">
 		</div>
 		<div id="pg1" class="print-content-select-disable">
-			<svg id="pdf1" viewBox="0 0" class="print-content-svg-container" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<svg id="pdf1" viewBox="0 0 1210 935" class="print-content-svg-container" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				<defs>
 				<clipPath id="c0"><path d="M0,935V0H1210V935Z"/></clipPath>
 				<clipPath id="c1"><path d="M59.3,844.9V760.7H190.4v84.2Z"/></clipPath>
@@ -306,9 +306,25 @@
 					format: 'a4'
 				},
 				filename: 'certificate.pdf',
-				html2canvas:  { width: 1210,height: 935, letterRendering: true, useCORS: true, logging: true},
+				html2canvas:  { 
+					width: 1210 ,
+    				height: 935,
+					letterRendering: true, 
+					useCORS: true,
+					logging: true,
+					onclone: function(element){				
+						const svgElements = Array.from(element.querySelectorAll('svg'));
+						svgElements.forEach(function(s){
+							const bBox = s.getBBox();
+							s.setAttribute("x", bBox.x);
+							s.setAttribute("y", bBox.y);
+							s.setAttribute("width", bBox.width);
+							s.setAttribute("height", bBox.height);
+					  });
+					}
+				},
 				margin: 1,
-				image: {type: 'jpeg', quality: 1}
+				image: {type: 'svg', quality: 1}
 			};
 			html2pdf().from(printContents).set(options).save();
 		});
