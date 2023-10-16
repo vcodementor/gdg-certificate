@@ -3,11 +3,12 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
+
 </head>
 
-<body style="margin: 0;">
-
-<div id="p1" style="overflow: hidden; position: relative; background-color: white; width: 1210px; height: 935px;">
+<body>
+<button id="button">DOWNLOAD</button>
+<div id="p1" style="overflow: hidden; position: relative; background-color: white;">
 
 <!-- Begin shared CSS values -->
 <style class="shared-css" type="text/css" >
@@ -113,7 +114,7 @@
 <!-- End embedded font definitions -->
 
 <!-- Begin page background -->
-<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg1Overlay" style="background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
 <div id="pg1" style="-webkit-user-select: none;"><svg id="pdf1" width="1210" height="935" viewBox="0 0 1210 935" style="width:1210px; height:935px; -moz-transform:scale(1); z-index: 0; isolation: isolate;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <clipPath id="c0"><path d="M0,935V0H1210V935Z"/></clipPath>
@@ -159,5 +160,14 @@ stroke-linejoin: round;
 
 
 </div>
+<script src="html2canvas.bundle.min.js"></script>
+<script>
+const btn = document.getElementById("button");
+
+btn.addEventListener("click", function(){
+var element = document.getElementById('p1');
+  html2pdf().from(element).save('certificate.pdf');
+});
+</script>
 </body>
 </html>
