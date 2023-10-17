@@ -3,8 +3,12 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta charset="utf-8" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
 	<!-- Begin inline CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+	<link rel="stylesheet" href="css/normalize.min.css"/>
+	
 	<style type="text/css" >
 		@font-face {
 			font-family: Carlito-Bold_t;
@@ -318,7 +322,7 @@
 	<button id="button" class="certificate-download-btn">
 		<img src="assets/download-icon.jpg" width="50" height="50">
 	</button>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/html2pdf.bundle.min.js"></script>
 	<script>
 		const btn = document.getElementById("button");
 		btn.addEventListener("click", function(){
@@ -330,7 +334,7 @@
 				filename: 'certificate.pdf',
 				html2canvas:  { 
 					width: 1210 ,
-    				height: 935,
+    				height: 995,
 					letterRendering: true, 
 					useCORS: true,
 					logging: true,
