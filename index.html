@@ -4,6 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta charset="utf-8" />
 	<!-- Begin inline CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
 	<style type="text/css" >
 		@font-face {
 			font-family: Carlito-Bold_t;
@@ -263,6 +264,10 @@
 			bottom: 50px;
 			cursor: pointer;
 		}
+
+		#button {
+			z-index: 999;
+		}
 	</style>
 	<!-- End inline CSS -->
 </head>
@@ -313,7 +318,7 @@
 	<button id="button" class="certificate-download-btn">
 		<img src="assets/download-icon.jpg" width="50" height="50">
 	</button>
-	<script src="html2canvas.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
 		const btn = document.getElementById("button");
 		btn.addEventListener("click", function(){
