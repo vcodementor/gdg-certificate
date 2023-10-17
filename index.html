@@ -247,13 +247,27 @@
 		.t.v9_1{transform:scaleX(0.829);}
 		.t.v10_1{transform:scaleX(0.969);}
 		.t.v11_1{transform:scaleX(0.9);}
-
+		.certificate-download-btn{
+			width: 70px;
+			height: 70px;
+			background-color: #5598ee;
+			border-radius: 50%;
+			box-shadow: 0 6px 10px 0 #666;
+			transition: all 0.1s ease-in-out;
+			font-size: 50px;
+			color: white;
+			text-align: center;
+			line-height: 70px;
+			position: fixed;
+			right: 50px;
+			bottom: 50px;
+			cursor: pointer;
+		}
 	</style>
 	<!-- End inline CSS -->
 </head>
 
 <body>
-	<button id="button">Download Certificate</button>
 	<div id="printContent" class="print-content">
 		<!-- Begin page background -->
 		<div id="pg1Overlay" class="print-content-overlay-container">
@@ -296,6 +310,9 @@
 		</div>
 		<!-- End text definitions -->
 	</div>
+	<button id="button" class="certificate-download-btn">
+		<img src="assets/download-icon.jpg" width="50" height="50">
+	</button>
 	<script src="html2canvas.bundle.min.js"></script>
 	<script>
 		const btn = document.getElementById("button");
@@ -308,7 +325,7 @@
 				filename: 'certificate.pdf',
 				html2canvas:  { 
 					width: 1210 ,
-    				height: 935,
+    				height: 995,
 					letterRendering: true, 
 					useCORS: true,
 					logging: true,
