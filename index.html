@@ -352,7 +352,11 @@
 				margin: 1,
 				image: {type: 'svg', quality: 1}
 			};
-			html2pdf().from(printContents).set(options).save();
+			html2pdf().from(printContents).set(options).save().thenCore(function(){
+			}, function(error){
+				alert('Something went wrong. Please try again later. Error Message:\r\n' + error.message);
+				console.error(error);
+			});
 		});
 	</script>
 </body>
