@@ -25,6 +25,19 @@
 			src: url("fonts/LiberationSans-Bold_j.woff") format("woff");
 		}
 
+		.header {
+			overflow: hidden;
+			background-color: #f1f1f1;
+			padding: 15px 10px;
+			margin: 0;
+		}
+		.header-right {
+			float: right;
+		}
+		/* .header-logo {
+			height:40px;
+		} */
+		
 		.t {
 			transform-origin: bottom left;
 			z-index: 2;
@@ -346,6 +359,19 @@
 </head>
 
 <body>
+	<div class="header">
+		<a href="https://gdg.community.dev/gdg-toronto/">
+		<img src="./assets/img/6.png" class="header-logo">
+			</a>
+			
+		<div class="header-right">
+				<a href="https://gdg.community.dev">
+					<img src="./assets/img//7.png" class="header-logo">
+		</a>
+			</div>
+			
+	</div>
+
 	<div id="printContent" class="print-content">
 		<!-- Begin page background -->
 		<div id="pg1Overlay" class="print-content-overlay-container">
